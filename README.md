@@ -1,70 +1,111 @@
-# Getting Started with Create React App
+# Compte Client - Application de Gestion de Comptes Bancaires
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Application React pour la gestion de comptes bancaires (Courant et Épargne). Cette application permet d'ajouter et de visualiser des comptes via une interface utilisateur moderne utilisant Bootstrap.
 
-## Available Scripts
+## Fonctionnalités
+
+- ✨ Ajouter un nouveau compte bancaire
+- 📋 Afficher la liste de tous les comptes
+- 💰 Gestion de deux types de comptes : Courant et Épargne
+- 🔄 Communication avec une API REST backend
+
+## Technologies Utilisées
+
+- **React** (v19.2.0) - Bibliothèque JavaScript pour l'interface utilisateur
+- **Bootstrap** (v5.3.8) - Framework CSS pour le design responsive
+- **Axios** (v1.12.2) - Client HTTP pour les appels API
+- **React Testing Library** - Tests unitaires
+
+## Prérequis
+
+- Node.js (version 14 ou supérieure)
+- npm ou yarn
+- Backend API en cours d'exécution sur `http://localhost:8082/api`
+
+## Installation
+
+1. Cloner le projet :
+
+```bash
+git clone <repository-url>
+cd compte-client
+```
+
+2. Installer les dépendances :
+
+```bash
+npm install
+```
+
+3. Configurer l'URL de l'API (si nécessaire) dans `src/config.js` :
+
+```javascript
+const API_BASE_URL = "http://localhost:8082/api";
+```
+
+## Démarrage de l'Application
 
 In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Lance l'application en mode développement.\
+Ouvrez [http://localhost:3000](http://localhost:3000) pour la visualiser dans votre navigateur.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+La page se recharge automatiquement lorsque vous effectuez des modifications.\
+Les erreurs de lint s'affichent également dans la console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Lance le runner de tests en mode watch interactif.\
+Consultez la section sur [les tests](https://facebook.github.io/create-react-app/docs/running-tests) pour plus d'informations.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Compile l'application pour la production dans le dossier `build`.\
+Elle regroupe correctement React en mode production et optimise la build pour de meilleures performances.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+La build est minifiée et les noms de fichiers incluent des hashes.\
+Votre application est prête à être déployée!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Structure du Projet
 
-### `npm run eject`
+```
+compte-client/
+├── public/           # Fichiers statiques
+├── src/
+│   ├── components/
+│   │   ├── CompteForm.js   # Formulaire d'ajout de compte
+│   │   └── CompteList.js   # Liste des comptes
+│   ├── App.js        # Composant principal
+│   ├── config.js     # Configuration de l'URL de l'API
+│   └── index.js      # Point d'entrée de l'application
+└── package.json
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## API Backend
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+L'application communique avec une API REST qui doit être disponible sur `http://localhost:8082/api`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Endpoints utilisés :
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- `GET /comptes` - Récupérer la liste de tous les comptes
+- `POST /comptes` - Créer un nouveau compte
 
-## Learn More
+### Format des données :
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```json
+{
+  "id": 1,
+  "solde": 5000.0,
+  "dateCreation": "2025-10-27",
+  "type": "COURANT"
+}
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Types de Comptes
 
-### Code Splitting
+- **COURANT** - Compte courant
+- **EPARGNE** - Compte épargne
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Auteur
