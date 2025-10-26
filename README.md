@@ -2,7 +2,7 @@
 
 Application React pour la gestion de comptes bancaires (Courant et Épargne). Cette application permet d'ajouter et de visualiser des comptes via une interface utilisateur moderne utilisant Bootstrap.
 
-![Démonstration](./assets/demo.gif)
+![Démonstration](src/assets/demo.gif)
 
 ## Fonctionnalités
 
